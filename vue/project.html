@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발표순서.html</title>
+</head>
+<body>
+<div id="app">
+    <h1>조별 발표 순서</h1>
+    <button v-on:click="shuffle">섞기</button>
+    <ol>
+        <li>1조</li>
+        <li v-for="tmp in list">{{tmp}}</li>
+    </ol>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>    
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    let app=new Vue({
+        el:"#app",
+        data:{
+            list:["2조","3조","4조","5조","6조"]
+        },
+        methods:{
+            shuffle:function(){
+                this.list = _.shuffle(this.list);
+            }
+        }
+    });
+</script>        
+
+</body>
+</html>
