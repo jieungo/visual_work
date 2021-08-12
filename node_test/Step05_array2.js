@@ -65,9 +65,7 @@ console.log(result9);
 제곱한 결과 중에서 50 이상인 숫자로 구성된 새로운 배열을 얻어내보세요
 */
 
-let result10 = nums.map((item)=> {
-    return item**2;
-}).filter(item=>item>=50);
+let result10 = nums.map((item)=> item**2).filter(item=>item>=50);
 
 console.log(result10);
 
