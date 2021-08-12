@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>javascript 테스트중..</h1>
+    <button onclick = 'showCount()';>눌러보셈</button>
+    <button onclick = 'resetCount()'>Reset</button>
+    <script>
+        // 웹브라우저야 num이라는 이름의 기억공간(=변수)을 만들어서 숫자 10을 넣어줘!
+        // num 이라는 변수를 만들어서 초기값 10 대입하기
+        // let num = 10;
+
+        //num2라는 이름의 변수 만들고 초기값은 대입하지 않기
+        // let num2;
+
+        /* 위의 눌러보셈 버튼을 눌렀을때 알림창에 버튼 누른 횟수 출력하기 */
+
+        let num = 0;
+        
+        function showCount() {
+            alert(num+=1);
+        }
+
+        function resetCount() {
+            num = 0;
+        }
+
+
+    </script>
+</body>
+</html>

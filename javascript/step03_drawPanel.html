@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_drawPanel.html</title>
+    <style>
+        canvas {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>그림판</h1>
+    <canvas id="myCanvas" width="500" height="500"></canvas><br>
+    <input type="color" id="inputColor" />
+    <select id="lineWidth">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option>4</option> <!-- 벨류 지정안하면 이너텍스트가 벨류값이 됨-->
+        <option selected>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+    </select>
+    <script>
+        let canvas = document.querySelector('#myCanvas');
+        let context = canvas.getContext('2d');
+        let isMouseDown = false;
+
+
+        // 기본 선의 굵기지정
+        context.lineWidth = 5;
+        // canvas 에 mousedown 이벤트가 일어 났을때 실행할 함수 등록
+        document.querySelector('#myCanvas').addEventListener('mousedown', function(e) {
+            //이벤트가 일어난 곳의 좌표에서 그림을 그릴 준비를 한다.
+            let eventX = e.offsetX;
+            let eventY = e.offsetY;
+            isMouseDown = true;
+            context.beginPath();
+            context.moveTo(eventX, eventY);
+        });
+
+        document.querySelector('#myCanvas').addEventListener('mousemove', function(e) {
+            // 이벤트가 일어난 곳의 좌표까지 선을 연결한다.
+            if (isMouseDown) {
+                let eventX = e.offsetX;
+                let eventY = e.offsetY;
+                context.lineTo(eventX,eventY);
+                context.stroke();
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isMouseDown = false;
+        });
+
+        // input type='color'에 change 이벤트 일어 났을 때 실행할 함수 등록
+        document.querySelector('#inputColor').addEventListener('change', function() {
+            // 현재 색상값을 읽어와서
+            let thisColor = this.value;
+            //dontext에 반영한다
+            context.strokeStyle = thisColor;
+        });
+
+        // 선 굵기 변경
+        document.querySelector('#lineWidth').addEventListener('change', function() {
+            /*
+                이벤트가 일어난 바로 그 요소의 참조값은 this로 얻어낼수 있다.
+            */
+            //select에 선택된 option value 값을 읽어온다.
+            let thisWidth = this.value;
+            // 읽어온 값을 선의 굵기에 반영하기
+            context.lineWidth = thisWidth;
+        })
+    </script>
+</body>
+</html>

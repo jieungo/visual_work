@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step10_anchor2.html</title>
+    <style>
+        .container{
+            width: 768px;
+            background-color: yellowgreen;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        .spacer{
+            height: 500px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>동일한 페이지 내에서의 이동(책갈피)</h1>
+        <ul>
+            <li><a href="#one">one</a></li>
+            <li><a href="#two">two</a></li>
+            <li><a href="#three">three</a></li>
+        </ul>
+        <div class="spacer"></div>
+        <!-- div.one은 one이라는 클래스가 바로 지정되고, div#two는 two라는 id가 바로 지정됨-->
+        <p id="one">one Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum iusto ut aliquid autem, debitis repudiandae ipsam minus molestiae libero aliquam unde maiores reprehenderit pariatur suscipit cupiditate? Saepe iure quibusdam assumenda.</p>
+        <div class="spacer"></div>
+        <p id="two">two Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod error illum, nesciunt doloremque animi nisi eum modi reiciendis ad. Aliquid nam recusandae ea sequi alias voluptas officiis nulla deserunt eligendi?</p>
+        <div class="spacer"></div>
+        <p id="three">three Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, distinctio cupiditate? Debitis, labore, dolores voluptatem impedit repellat, consectetur dolorem ab necessitatibus exercitationem blanditiis nihil officia recusandae iste eligendi voluptas provident.</p>
+        <!-- p#three{three}하면 태그 안에 three라는 텍스트가 생긴다.-->
+        <div class="spacer"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step10_anchor.html</title>
+</head>
+<body>
+    <h1>a(anchor) 요소는 하이퍼링크, 책갈피, javascript 등을 수행할때 사용한다.</h1>
+    <a href="hello.html">hello.html로 이동</a>
+    <a href="https://daum.net">daum으로 이동</a>
+    <a href="https://naver.com">naver로 이동</a>
+    <a href="hello.html"><img src="images/kim1.png" alt="img"></a>
+    <!-- 인라인 요소는 원래 블럭요소를 자식요소로 가질 수 없다. ex. span안에 div넣는거!
+        단 a 요소만 예외적으로 div같은 블럭요소를 자식요소로 가질수 있다.-->
+
+        <a href="hello.html">
+            <div>
+                <h3>어쩌구 저쩌구</h3>
+                <p>
+                    <img src="images/kim1.png">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores obcaecati eveniet atque pariatur qui aperiam necessitatibus nobis tenetur voluptatibus et reiciendis quisquam, est temporibus dolorum. Molestias temporibus eos ad vel.
+                </p>
+            </div>
+        </a>
+</body>
+</html>

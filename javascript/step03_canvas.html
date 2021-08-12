@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_canvas.html</title>
+    <style>
+        canvas {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <h1> 칸바스에 그림 그리기</h1>
+    <!-- javascript로 그림 그릴 수 있는 canvas 요소-->
+    <canvas id='myCanvas' width="500" height="500"></canvas>
+    <script>
+        // 칸바스의 참조값 얻어오기
+        let canvas = document.querySelector('#myCanvas');
+        // 칸바스에 렌더링 할 수 있는 도구의 참조값 얻어오기
+        let context = canvas.getContext('2d');
+
+        // 선의 색상 지정
+        context.strokeStyle = 'green';
+        // 선의 굵기 지정
+        context.lineWidth = 10;
+        // 선의 시작점과 끝점을 둥글게
+        context.lineCap = 'round';
+
+        context.beginPath(); // 경로시작
+        context.moveTo(100, 100); // 시작점으로 이동
+        context.lineTo(200, 200); // 이을점 지정
+        context.stroke(); // 실제 그리기
+
+        context.strokeStyle="red";
+        context.lineWidth=5;
+        
+        context.beginPath();
+        context.moveTo(200, 200);
+        context.lineTo(300, 100);
+        context.stroke();
+    </script>
+</body>
+</html>

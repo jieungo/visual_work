@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step04_loop3.html</title>
+</head>
+<body>
+    <h1>forEach 함수를 활용한 반복 작업</h1>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+    <button id="changeBtn">바꾸기</button>
+    <script>
+        // 모든 div의 참조값을 배열로 얻어내기
+        let divs = document.querySelectorAll('div');
+        divs.forEach(function(item, index) {
+            item.innerText = '김구라';
+            //divs[index].innerText='김구라';
+        });
+        /* 바꾸기 버튼을 눌렀을 때 모든 div의 innerText를 '해골'로 바꾸기*/
+        document.querySelector('#changeBtn').addEventListener('click', function() {
+            divs.forEach(function(item) {
+                item.innerText="해골";
+            });
+        });
+    </script>
+</body>
+</html>

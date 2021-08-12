@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nums = [1,2,3,4];
+        let names = ['김구라', '해골', '원숭이'];
+        let data = [true, true, false];
+
+        let members = [
+            {num:1, name:'김구라', addr:'노량진'}, 
+            {num:2, name:'해골', addr:'행신동'}, 
+            {num:3, name:'원숭이', addr:'상도동'}
+        ]; //오브젝트 안에 사물함 키 값이 들어있다!
+
+        //function type
+        let f1 = function() {
+            //일괄 실행할 자바스크립트를 ()안에 작성해서 준비할 수 있다.
+            console.log('하나');
+            console.log('둘');
+            console.log('셋');
+        };
+
+        let f2 = function() {
+            console.log('f2 호출 됨!');
+            return 999; // return (되돌려준다, 함수를 끝낸다, 함수를 호출한 곳으로 돌아간다.)
+            //함수를 호출하면 항상 호출한 뒤의 자리는 언디파인드로 바뀐다. 여기에 리턴값을 넣으면 언디파인드 대신
+            //리턴값이 호출된다.
+        };
+
+        let f3 = function() {
+            console.log('f3() 호출 됨!');
+            return 'hello!';
+        };
+
+        let f4 = function() {
+            console.log('f4() 호출 됨!');
+            return {num:1, name:'kim'};
+        }
+
+        let f5 = function() {
+            console.log('f5() 호출 됨!');
+            return [10,20,30] //f5()[0]으로 바로 호출이 가능하다.
+        }
+
+        //let result1 = f5 는 함수를 참조하는 것
+        //let result2 = f5() 는 함수를 호출하는 것
+
+
+        //let gura = alert;
+        //gura(); 는 호출창이 뜬다.
+
+        //let result = alert();
+        //result() 는 undefiend이므로 (이미 앞에서 호출되고 값이 언디파인드 되버림) 에러가 난다.
+        
+    </script>
+</body>
+</html>

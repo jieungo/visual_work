@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_example3.html</title>
+</head>
+<body>
+    <h1>반복문 활용하기</h1>
+    <div id="one">div1</div>
+    <div id="two" class="my-class">div2</div>
+    <div class="my-class">div3</div>
+    <div>div4</div>
+    <div class="my-class">div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+    <input type="text" id="inputName" placeholder="이름 입력...">
+    <button id="changeBtn">바꾸기</button>
+    <script>
+        //모든 div 의 참조값이 들어있는 배열의 참조값을 미리 얻어낸다.
+        const divs=document.querySelectorAll("div");
+        // id 가 inputName 인 input 요소의 참조값 얻어내기 
+        const inputName=document.querySelector("#inputName");
+
+        //바꾸기 버튼을 눌렀을때 input 요소에 입력한 이름을 
+        //모든 div 의 innerText 로 지정해 보세요.
+        document.querySelector("#changeBtn").addEventListener("click", function(){
+            
+            for(let i=0; i<divs.length; i++){
+                //input 요소에 입력한 value 를 div 의 innerText 로 지정하기 
+                divs[i].innerText=inputName.value; 
+            } 
+
+             //입력창 지우기
+            inputName.value="";
+             //포커스 주기
+            inputName.focus();
+        });
+
+    </script>
+</body>
+</html>

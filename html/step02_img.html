@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_img.html</title>
+    <style>
+        /*아이디로 특정 요소 선택하고자하면 # 붙임*/
+        #one{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지 입니다.</h1>
+    <!-- img 요소의 소스 속성의 값으로는 로딩할 이미지 경로 적고
+    알트 속성의 값으로는 이미지에 대한 자세한 설명을 적어줘야 한다-->
+    <img src="images/kim1.png" alt="김구라가 왼손에 확성기를 들고 오른손에는 책을 들고 있는 이미지"><br>
+    <!-- 소스를 자세하게 적는 이유는? 시각장애인에게 스크린리더를 통해 (이미지를 못보니까) 설명을 읽어줌. 접근성에 관련된것이다-->
+    <img id="one" src="images/1.jpg" alt="한효주가 웃으며 카메라를 들고 있는 사진">
+</body>
+</html>

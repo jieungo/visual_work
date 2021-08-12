@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_event2.html</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid palegreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="myDiv">div1</div>
+
+    <script>
+        document.querySelector('#myDiv').addEventListener('mousedown', function() {
+            console.log('mousedown!');
+            document.querySelector('#myDiv').style.background = 'yellow';
+        });
+        document.querySelector('#myDiv').addEventListener('mouseup', function() {
+            console.log('mouseUp!');
+            document.querySelector('#myDiv').style.background = 'white';
+        });
+
+        document.querySelector('#myDiv').addEventListener('mousemove', function(event) {
+            console.log('mouseMove!');
+            console.log(event); // 함수에 event 객체가 전달된다.
+            //좌표 얻어내기
+            let x = event.offsetX;
+            let y = event.offsetY;
+            // 얻어낸 값을 콘솔에 출력해 보기
+            let info = `x: ${x}px, y: ${y}px`;
+            console.log(info);
+            document.querySelector('#myDiv').innerText = info;
+        });
+    </script>
+</body>
+</html>

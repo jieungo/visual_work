@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step04_example.html</title>
+</head>
+<body>
+    <h1>반복문 활용하기</h1>
+    <div id="one">div1</div>
+    <div id="two" class="my-class">div2</div>
+    <div class="my-class">div3</div>
+    <div>div4</div>
+    <div class="my-class">div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+    <button id='changeBtn'>바꾸기</button>
+    <button id='changeBtn2'>마우스를 올려보셈</button>
+    <button id='changeBtn3'>포커스를 주셈</button>
+    <script>
+        /*
+        div1~10까지 모든 디브의 이너텍스트를 김구라로 바꾸려면?
+        */
+
+        let Btn = document.querySelector('#changeBtn');
+        Btn.addEventListener('click', function() {
+            for (i=0; i<10; i++) {
+                document.querySelectorAll('div')[i].innerText = '김구라';
+        }
+        });
+
+        /* document.querySelector('#changeBtn).addEventListner('click', function(){}*/
+
+        document.querySelector('#changeBtn2').addEventListener('mouseover', function() {
+            for (i=0; i<10; i++) {
+                document.querySelectorAll('div')[i].innerText = '해골';
+            }
+        });
+
+        document.querySelector('#changeBtn3').addEventListener('focus', function() {
+            for (i=0; i<10; i++) {
+                document.querySelectorAll('div')[i].innerText = '원숭이';
+            }
+        });
+    </script>
+</body>
+</html>

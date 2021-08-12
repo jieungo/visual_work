@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_dataType.html</title>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <script>
+        //회원 한명의 정보라고 가정해보자
+        //각각의 변수에 대입하면 3개의 변수가 필요 하지만,,
+        // let num1 = 1;
+        // let name = '김구라';
+        // let isMan = true;
+
+        // 다른 data type을 활용하면 1개의 변수명으로 회원 한명의 정보 관리 가능
+        let num = 1;
+        let name = '김구라';
+        let isMan = true;
+        
+        
+        let man1 = {
+            num1: 1,
+            name: '김구라',
+            isMan: true
+        };
+
+        let man2 = {
+            num1: 1,
+            name: '김구라',
+            isMan: true
+        };
+
+        let man3 = {
+            num: num,
+            name: name,
+            isMan: isMan
+        };
+
+        let a=man1;
+        let b=man1.num1;
+        let c=man1.name;
+        let d=man1.isMan;
+
+        //object에 지정된 값을 수정해 보기
+        man2.num = 999;
+        man2.name = '이정호';
+
+        let man4 = {};
+        man4.num = 2;
+        man4.name = '해골';
+        delete man4.name; //delete 예약어를 이용해서 삭제도 가능하다. (많이 쓰지는 않음)
+    </script>
+</body>
+</html>

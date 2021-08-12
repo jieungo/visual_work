@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_event.html</title>
+</head>
+<body>
+    <h1>이벤트 처리</h1>
+    <button id='one'>눌러보셈</button>
+    <button id='two'>눌러보셈222</button>
+    <script>
+        let oneBtn = document.querySelector('#one');
+        oneBtn.addEventListener('click', function(){
+            console.log('버튼 눌렀당');
+        });
+        // id가 two인 버튼에 클릭이란 이벤트가 발생하면 호출 될 함수 등록
+        document.querySelector('#two').addEventListener('click', function(){
+            console.log('버튼 눌럿당222');
+        });
+    </script>
+</body>
+</html>

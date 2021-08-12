@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step09_form.html</title> <!--클라가 입력한 내용이 서버에 전송 될 양식을 폼이라고 함-->
+</head>
+<body>
+    <h1>폼 요소 작성하기</h1>
+    <form action="login.jsp"> <!--action="서버에 전송할 위치(요청경로)" 현재는 서버없어서 테스트 못함-->
+        <label for="email">이메일</label>
+        <input type="text" id="email" name="email">
+
+        <label for="pwd">비밀번호</label>
+        <input type="password" name="pwd" id="pwd"> <!-- 스크린리더기가 id 속성의 값 pwd를 보고 위의 레이블에서 id 속성값과 같은 pwd안의 내용'비밀번호'를 읽어줘서 시각장애인들 사용하게끔-->
+<!-- label의 for 속성값과 input의 id 속성값은 동일하게 작성되어야 한다. name은 상관없지만 굳이 다르게 할 필요도 없다-->
+<!-- name은 서버에서 필요한 값! 값이 한 번에 전송되어올때 어디에 무엇을 입력/선택했는지 구분하기위해-->
+<!-- 프론트개발자는 name속성값을 비워놓음. 백엔드가 사용-->
+        <button type="submit">로그인</button>
+        <button type="reset">취소</button>
+    </form>
+</body>
+</html>

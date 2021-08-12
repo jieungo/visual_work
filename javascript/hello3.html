@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one">김구라</p>
+    <p id="two">해골</p>
+    <p id="three">원숭이</p>
+
+    <button onclick="showCount()">눌러보셈</button>
+    <button onclick="resetCount()">Reset</button>
+    <p id="currentCount">0</p>
+    <script>
+        let currentCount = 0;
+        function showCount() {
+            currentCount = currentCount + 1;
+            document.querySelector('#currentCount').innerText = currentCount;
+        }
+
+        function resetCount() {
+            currentCount = 0;
+            document.querySelector('#currentCount').innerText = currentCount;
+        }
+
+
+    </script>
+</body>
+</html>

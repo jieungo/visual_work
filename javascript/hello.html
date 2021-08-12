@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello.html</title>
+</head>
+<body>
+    <button onclick="move()">움직이기</button><br>
+    <img id="kimImg" src="images/kim1.png">
+
+    <script>
+
+        /*
+        프로그래밍이란?
+
+        특정 시점(시간 , 사용자의 동작, 어떤 조건이 만족)에 실행할 동작을 미리 준비해 놓고
+        해당 특정 시점에 준비해둔 동작을 일괄 수행하게 하는것.
+
+        */
+        //  웹브라우저야
+        //  혹시 클라이언트가 아이디가 moveBtn인 버튼을 누르면
+        //  id가 kimImg인 이미지를
+        //  오른쪽으로 100px씩 움직여줘
+        //  부탁해
+
+        // 실행할 동작을 준비 (실행할 자바스크립트 코드를 미리 만들어 놓기)
+        
+        let left=0;
+        
+        function move() { //동작 미리 준비하는 단계
+            left = left+100;
+            document.querySelector("#kimImg").style.marginLeft = left+"px";
+        }
+
+
+
+    </script>
+</body>
+</html>

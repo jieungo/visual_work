@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_dataType7.html</title>
+</head>
+<body>
+    <button onclick="removeAll()">삭제</button>
+    <script>
+        let removeAll = function() {
+            let isDelete = confirm ('정말로 삭제 하시겠습니까?'); //컨펌 함수가 실행되고 반환값이 isDelete에 들어감
+                // confirm은 확인 누르면 true, 취소 누르면 false가 나옴
+                // ==true를 따로 해주지 않는 이유는 컨펌 자체에 트루 펄스가 들어있기 때문
+                // 즉 if(true)면 그에 해당하는 내용이 나온다.
+            if(isDelete) {
+                console.log('모든 자료를 삭제 했습니다.');
+            } else {
+                console.log('취소되었습니다.');
+            }
+        }
+        // 두개의 숫자를 전달 받아서 합계를 console에 출력하는 함수
+        let showSum = function(first, second){ //first, second는 매개변수! let은 사용안함.
+            // 1. 함수에 전달 된 두개의 숫자를 더한 결과를 얻어낸다.
+            let result = first + second;
+            // 2. 결과 값을 콘솔창에 출력한다.
+            console.log(result);
+        };
+
+
+
+        // //페이지 로딩 시 준비되는 부분은 글로벌영역(전역)
+        // let first = 10;
+        // let second = 20;
+
+        // let showSum = function(first, second){ //여기(함수 안쪽 매개변수까지 포함해서)는 로컬영역!
+        //     //매개변수는 밖에있는 걸 참조못한다! 위에 let으로 선언한거랑 서로 다른거임.
+        //     //만약 first가 매개변수로 없으면 이 안의 first는 위에 글로벌영역의 first를 참조함
+        //     //콘솔창은 글로벌영역으로 잡힘! 글로벌에서 로컬영역에 있는 건 접근이 불가능 (근데 반대로는 가능)
+        //     //매개변수는 let은 보이지않지만 여기서 새로 선언한거다! 함수 안의 first는 매개변수 first를 참조함
+        // // 1. 함수를 전달된 두개의 숫자를 더한 결과를 얻어낸다.
+        // let result = first + second;
+        // // 2. 결과 값을 콘솔창에 출력한다.
+        // console.log(result);
+
+        // let resutl = num1+10; 작동시키면 num+10의 계산값(결과값)이 result에 대입된다.
+        // 전화번호는 문자열! 산술계산하지 않기 때문에 숫자타입의 데이터가 아니다.
+    </script>
+</body>
+</html>
