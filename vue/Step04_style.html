@@ -7,7 +7,7 @@
     <title>Step04_style.html</title>
 </head>
 <body>
-   <div class="container" id="app">
+    <div class="container" id="app">
         <h1>vue js 에서 css 조작하기</h1>
         <p v-bind:style="{color:'red', fontSize:'20px'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, aperiam minima autem quae commodi ab laborum ad. Accusamus nulla, error commodi sed dolor a! Numquam atque tempore porro quos illo?</p>
         <p v-bind:style="{color:fontColor, fontSize: fontSize+'px'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, placeat aliquam maxime tempora earum illo porro sapiente numquam soluta est temporibus, rem mollitia magni corrupti officiis ab similique fuga laudantium.</p>
@@ -15,20 +15,20 @@
         <input type="text" placeholder="글자색 입력..." v-model="fontColor">
         <input type="text" placeholder="글자의 크기 입력..." v-model="fontSize">
     </div>
-   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-   <script>
-       let app=new Vue({
-           el:"#app",
-           data:{
-              fontColor:"black",
-              fontSize:16 
-           },
-           computed:{
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app=new Vue({
+            el:"#app",
+            data:{
+                fontColor:"black",
+                fontSize:16 
+            },
+            computed:{
                 pStyle:function(){
                     return {color:this.fontColor, fontSize: this.fontSize+'px'};
                 }
-           }
-       });
-   </script>        
+            }
+        });
+    </script>        
 </body>
 </html>

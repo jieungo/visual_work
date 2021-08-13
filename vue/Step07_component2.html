@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step07_component2.html</title>
+</head>
+<body>
+    <div id="app">
+        <h2>친구 목록 입니다</h2>
+        <freinds-component v-bind:friends="friends"></freinds-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:'#app',
+            data:{
+                friends:["김구라", "해골", "원숭이"]
+            },
+            components:{
+                "freinds-component": {
+                    template:`
+                        <ul>
+                            <li v-for="item in friends"> {{item}} </li>
+                        </ul>
+                    `,
+                    props:["friends"]
+                }
+            }
+        })
+    </script>
+</body>
+</html>
