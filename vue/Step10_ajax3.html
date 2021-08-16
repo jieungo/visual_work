@@ -21,7 +21,7 @@
               </tr>
            </thead>
            <tbody>
-              <tr v-for="tmp in members" v-bind:key="tmp.num">
+              <tr v-for="tmp in currentMembers" v-bind:key="tmp.num">
                  <td>{{tmp.num}}</td>
                  <td>{{tmp.name}}</td>
                  <td>{{tmp.addr}}</td>
@@ -36,7 +36,8 @@
         let app=new Vue({
             el:"#app",
             data:{
-               members:[],
+                members:[], //원본
+                currentMembers:[], //현재 (원본과 현재, 두개로 나눠서 관리함)
                 keyword:""
             },
             methods:{
@@ -44,17 +45,8 @@
                     /*
                         filter() 함수는 배열에서 특정 아이템만 남겨진 새로운 배열을 리턴한다.
                     */
-                    let result = this.members.filter((item)=>{
-                        //이름에서 검색어가 존재하는 인덱스를 찾는다 
-                        //검색어가 존재하는 인덱스가 없으면 -1 을 리턴한다.
-                        let index=item.name.indexOf(this.keyword);
-                        if(index == -1){
-                            return false;
-                        }else{
-                            return true;
-                        }
-                    });
-                    this.members=result;
+                    this.currentMembers = this.members.filter(item => -1 != item.name.indexOf(this.keyword));
+                    // -1이 아닌 경우는 true를 반환. 위에는 람다함수를 사용함.
                 }
             },
             // root component 가 준비가 되었을때 호출되는 함수 
@@ -71,7 +63,9 @@
                     return response.json();
                 })
                 .then(function(data){
+                    //원본 데이터를 2 곳에 넣어준다.
                     self.members=data;
+                    self.currentMembers=data;
                 });
             }
         });
