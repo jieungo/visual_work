@@ -46,7 +46,7 @@
                         filter() 함수는 배열에서 특정 아이템만 남겨진 새로운 배열을 리턴한다.
                     */
                     this.currentMembers = this.members.filter(item => -1 != item.name.indexOf(this.keyword));
-                    // -1이 아닌 경우는 true를 반환. 위에는 람다함수를 사용함.
+                    // -1이 아닌 경우는 true를 반환. -1이면 리턴해버림. 위에는 람다함수를 사용함.
                 }
             },
             // root component 가 준비가 되었을때 호출되는 함수 

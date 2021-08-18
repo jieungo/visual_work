@@ -14,8 +14,8 @@
         <button @click="addClicked">추가</button>
         <br>
         <input type="text" 
-            v-model="keyword" @input="inputed"
-            placeholder="찾을 이름 입력...">
+                v-model="keyword" @input="inputed"
+                placeholder="찾을 이름 입력...">
         <br>
         <table>
            <thead>
@@ -41,7 +41,7 @@
         let app=new Vue({
             el:"#app",
             data:{
-               members:[],
+                members:[],
                 currentMembers:[],
                 keyword:"",
                 inputName:"",

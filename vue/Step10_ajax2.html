@@ -54,7 +54,7 @@
                             return true;
                         }
                     });
-                    this.members=result;
+                    this.members=result; //원본이 덮어쓰여짐
                 }
             },
             // root component 가 준비가 되었을때 호출되는 함수 
@@ -64,7 +64,7 @@
                 //회원목록을 서버에 요청해서 응답되면 화면을 업데이트 한다.
                 //this 즉 Vue 객체의 참조값을 self 라는 상수에 담기
                 const self=this;
-                   
+                
                 //gura_util.js 에 있는 함수를 이용해서 ajax 요청하기
                 ajaxPromise("http://localhost:8888/spring03/api/member/list.do")
                 .then(function(response){
