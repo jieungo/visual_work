@@ -17,7 +17,7 @@ const routes=[
 
 // 라우팅을 해줄 수 있는 라우터 객체를 생성해서
 const router=new VueRouter({
-    mode:'history',
+    // mode:'history', 넣는거보다 빼는게 일반적
     base: process.env.BASE_URL,
     routes
 });
