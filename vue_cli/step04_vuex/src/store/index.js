@@ -6,11 +6,12 @@ Vue.use(Vuex)
 
 //Vuex Store 객체를 생성해서 export 해 준다. 
 export default new Vuex.Store({
-    state:{
+    state:{ //데이터 저장소
         fortuneToday:"동쪽으로 가면 귀인을 만나요",
-        count: 0
+        member:{num:1, name:'김구라', addr:'노량진'},
+        names:['김구라', '해골', '원숭이', '주뎅이', '덩어리']
     },
-    mutations:{
+    mutations:{ //데이터를 변경하는 곳
         /*
             변경 함수에는 2개의 값을 전달 받을 수 있다
             첫 번째 값은 store 의 state 의 참조값이고
@@ -26,7 +27,7 @@ export default new Vuex.Store({
             state.fortuneToday = value;
         }
     },
-    actions:{
+    actions:{ //변경을 준비하는 곳
         /*
             actions 함수에는 두개의 인자가 전달되는데
             첫 번째는 stroe 관련객체 {state:xxx, commit: function({}, ...}
@@ -36,5 +37,14 @@ export default new Vuex.Store({
             commit('CHANGE_FORTUNE', value);
         }
     },
-    getters:{}
+    getters:{ //데이터 가공해서 가져가는 곳
+        fortuneLength(state){
+            
+            //오늘의 운세 문자열의 길이
+            let length=state.fortuneToday.length;
+            
+            //문자열의 길이를 리턴해준다
+            return length;
+        }
+    }
 })

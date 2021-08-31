@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App6.vue'
 //Vuex Store 를 import 해서 
 import store from './store'
 
