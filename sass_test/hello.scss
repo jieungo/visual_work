@@ -1,0 +1,40 @@
+/* $변수명 : 대입할값 ;*/
+
+$my-color: red;
+$my-size: 20px;
+
+p {
+  color: $my-color;
+  font-size: $my-size;
+  background-color: yellow;
+}
+
+button {
+  color: $my-color;
+  font-size: $my-size;
+}
+
+@for $i from 1 to 10 {
+  .grid-#{$i} {
+    width: 100px * $i;
+  }
+}
+
+$icons: (twitter, facebook, youtube);
+
+@each $tmp in $icons {
+  .#{$tmp} {
+    background: url("images/#{$tmp}.png");
+  }
+}
+
+@mixin theme($theme: DarkGray) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, 0.25);
+  color: #fff;
+}
+
+div {
+  font-size: 20px;
+  @include theme;
+}
