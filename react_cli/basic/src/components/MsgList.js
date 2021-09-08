@@ -15,6 +15,7 @@ class MsgList extends Component{
         }
         */
 
+        // .map() 이란 함수는 map()안에 전달한 함수가 리턴하는 아이템으로 새롭게 구성한 배열의 참조값을 리턴해준다
         const jsxList2=msgList.map(function(item){
             return <li key={item.id}>{item.msg}</li> ;
         });

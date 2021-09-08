@@ -19,10 +19,51 @@ class App11 extends Component{
                 <input ref={(ref)=>{ this.inputText = ref; }}
                     onKeyUp={this.handleKeyUp}/>
                 <button onClick={this.handleClick}>전송</button>
-                <MsgList msgList={this.state.msgs}/>
+                <MsgList msgList={this.state.msgs}
+                    deleteClicked={(id)=>{
+                        //1. this.state.msgs 배열을 사용해서 id 에 해당하는 아이템을 삭제한 새로운 배열을 얻어낸다.
+                        const newList=this.state.msgs.filter(item => item.id !== id);
+
+                        //위의 filter() 함수가 하는 로직을 표현하면 아래와 같다 
+                        //새로운 빈 배열의 참조값을 얻어낸다.
+                        const newList2=[];
+                        //반복문 돌면서 
+                        for(let i=0; i<this.state.msgs.length; i++){
+                            //msgs 배열의 아이템을 차례로 불러와서 
+                            let tmp=this.state.msgs[i];
+                            //만일 삭제할 아이템이 아니면
+                            if(tmp.id !== id){
+                                //새로운 배열에 아이템을 추가한다. 
+                                newList2.push(tmp);
+                            }
+                        }
+
+
+                        //2. this.setState() 를 이용해서 새로운 배열의 참조값을 msgs 에 넣어주어서
+                        // UI 가 업데이트 되도록 한다.
+                        this.setState({
+                            msgs:newList
+                        });
+                    }}/>
+
+                <hr/>
+
+                <MsgList msgList={this.state.msgs}
+                    deleteClicked={this.deleteClicked}/>
             </div>
         );
     }
+
+    deleteClicked = (id)=>{
+        //1. this.state.msgs 배열을 사용해서 id 에 해당하는 아이템을 삭제한 새로운 배열을 얻어낸다.
+        const newList=this.state.msgs.filter(item => item.id !== id);
+        //2. this.setState() 를 이용해서 새로운 배열의 참조값을 msgs 에 넣어주어서
+        // UI 가 업데이트 되도록 한다.
+        this.setState({
+            msgs:newList
+        });
+    }
+
     handleKeyUp = (e)=>{
         //전달된 이벤트 객체를 이용해서 눌러진 키의 코드값 얻어내기
         let code=e.keyCode;
